@@ -19,6 +19,7 @@
     "resolveJsonModule": true,
 
     // Emit
+    "declaration": true,
     "newLine": "lf",
     "sourceMap": true,
 
