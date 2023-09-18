@@ -1,6 +1,6 @@
 {
   "name": "@bible-api/bible-api",
-  "version": "0.1.0",
+  "version": "0.2.0-pre-release.0.1.0",
   "description": "A simple API for the Bible",
   "keywords": [
     "bible"
@@ -22,6 +22,7 @@
     "src/*.json"
   ],
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "directories": {
     "lib": "src/",
     "doc": ".github/"
