@@ -1,4 +1,4 @@
-[![License](https://badgen.net/github/license/gimjb/bible-api-local)](../LICENSE.md)
+[![License](https://badgen.net/github/license/bible-api/bible-api)](../LICENSE.md)
 [![TypeScript Style Guide](https://badgen.net/badge/code%20style/ts-standard/blue?icon=typescript)](https://github.com/standard/ts-standard)
 
 # Bible API
