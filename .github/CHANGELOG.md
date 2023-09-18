@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.2]: 2023-09-18Z
+
+### Fixed
+
+- updated incorrect version in [`package-lock.json`](./package-lock.json).
+- removed incorrect information in this changelog.
+
 ## [0.2.1]: 2023-09-18Z
 
 ### Fixed
@@ -23,7 +30,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Bible versions: KJV1769, TR1624, and TR1894.
 - `parse()` function.
 - `localVersions.<version>.getPassage(GetPassageOptions)` function.
 - `localVersions.<version>.getVerse(BookIdentifier, number, number)` function.
