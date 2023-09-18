@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# NPM
+node_modules
+
+# TypeScript
+src/**/*.d.ts
+src/**/*.js
+src/**/*.js.map
+!src/**/*.test.js
+!src/**/test.js
