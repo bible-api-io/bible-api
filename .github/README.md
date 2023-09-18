@@ -11,7 +11,6 @@ An API for accessing the contents of the Bible.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
