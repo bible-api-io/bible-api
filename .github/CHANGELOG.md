@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0]: 2023-09-18Z
+
 ### Added
 
-- TypeScript type definitions (hopefully).
+- TypeScript type definitions.
 
 ## [0.1.0]: 2023-09-18Z
 
