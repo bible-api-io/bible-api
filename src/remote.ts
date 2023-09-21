@@ -1,4 +1,4 @@
-import http from 'http'
+import https from 'https'
 import {
   GetPassageOptions,
   GetVerseOptions,
@@ -16,17 +16,17 @@ interface RequestPassageOptions extends GetPassageOptions {
   version: RemoteBibleVersion
 }
 
-const remoteUrl = 'http://localhost:5409/'
-let agent: http.Agent
+const remoteUrl = 'https://api.bible-api.io/'
+let agent: https.Agent
 
 function request(options: { headers: object; body: object }): Promise<object> {
   if (!agent) {
-    agent = new http.Agent({ keepAlive: true, maxSockets: 1 })
+    agent = new https.Agent({ keepAlive: true, maxSockets: 1 })
   }
 
   return new Promise((resolve, reject) => {
     let responseBody = ''
-    const request = http.request(
+    const request = https.request(
       remoteUrl,
       {
         agent,
