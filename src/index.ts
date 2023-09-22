@@ -1,6 +1,7 @@
 import BookIdentifiers from './BookIdentifiers'
 import localVersions from './localVersions'
 import parse from './parse'
+import { requestPassage, requestVerse } from './remote'
 
 /** An API for the Bible. */
 module.exports = {
@@ -15,7 +16,13 @@ module.exports = {
    * @return An array of options for `version.getPassage()` along with the version
    * to use.
    */
-  parse
+  parse,
+  remote: {
+    /** Request a verse from the remote API. */
+    requestVerse,
+    /** Request a passage from the remote API. */
+    requestPassage
+  }
 }
 
 export default module.exports
