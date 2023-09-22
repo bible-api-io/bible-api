@@ -7,12 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1]: 2023-09-22Z
+
+### Added
+
+- `remote.requestPassage(RequestPassageOptions)` function (again, this time for real).
+- `remote.requestVerse(RequestVerseOptions)` function (again, this time for real).
+
 ## [0.4.0]: 2023-09-22Z
 
 ### Added
 
-- `remote.requestPassage(RequestPassageOptions)` function.
-- `remote.requestVerse(RequestVerseOptions)` function.
+- ~~`remote.requestPassage(RequestPassageOptions)` function.~~
+- ~~`remote.requestVerse(RequestVerseOptions)` function.~~
 
 ## [0.3.0]: 2023-09-21Z
 
