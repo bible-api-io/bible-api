@@ -264,6 +264,22 @@ describe('new BibleVersion(BibleVersionOptions)', () => {
           })
         ).toMatchObject(genesis1_1_2_3)
       })
+
+      test('{ bookId: "Genesis", start: { chapterNumber: 1, verseNumber: 1 }, end: { chapterNumber: 1, verseNumber: 1 } }', () => {
+        expect(
+          kjv1769.getPassage({
+            bookId: 'Genesis',
+            start: { chapterNumber: 1, verseNumber: 1 },
+            end: { chapterNumber: 1, verseNumber: 1 }
+          })
+        ).toMatchObject({
+          bookId: 'Genesis',
+          start: { chapterNumber: 1, verseNumber: 1 },
+          end: { chapterNumber: 1, verseNumber: 1 },
+          name: 'Genesis 1:1 (KJV1769)',
+          verses: [genesis1_1]
+        })
+      })
     })
   })
 })

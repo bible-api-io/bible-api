@@ -313,6 +313,8 @@ export default class BibleVersion implements BibleVersionOptions {
       } else {
         name += `:${start.verseNumber}\u2013${end.chapterNumber}:${endVerseNumber}`
       }
+    } else if (start.verseNumber === end.verseNumber) {
+      name += `:${start.verseNumber}`
     } else if (
       start.verseNumber !== 1 ||
       endVerseNumber !== endChapter.length - 1

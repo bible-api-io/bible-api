@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.4]: 2023-09-23Z
+
+### Fixed
+
+- `Passage.name` now follows the format `<book name> <chapter>:<verse>` instead
+  of `<book name> <chapter>:<first verse>-<last verse>` when `Passage.start` is
+  the same as `Passage.end`.
+
 ## [0.4.3]: 2023-09-23Z
 
 I forgot to build the package before publishing it to npm. This release is the
@@ -75,6 +83,7 @@ same as [0.4.0], but with the correct files.
 - `localVersions.<version>.getVerse(BookIdentifier, number, number)` function.
 
 [unreleased]: https://github.com/bible-api-io/bible-api/compare/latest...HEAD
+[0.4.4]: https://github.com/bible-api-io/bible-api/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/bible-api-io/bible-api/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/bible-api-io/bible-api/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/bible-api-io/bible-api/compare/v0.4.0...v0.4.1
