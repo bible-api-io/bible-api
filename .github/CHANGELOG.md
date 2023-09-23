@@ -74,5 +74,5 @@ same as [0.4.0], but with the correct files.
 - `localVersions.<version>.getPassage(GetPassageOptions)` function.
 - `localVersions.<version>.getVerse(BookIdentifier, number, number)` function.
 
-[unreleased]: https://github.com/gimjb/bible-api-local/compare/latest...HEAD
-[0.1.0]: https://github.com/gimjb/bible-api-local/compare/v0.0.0...v0.1.0
+[unreleased]: https://github.com/bible-api-io/bible-api/compare/latest...HEAD
+[0.1.0]: https://github.com/bible-api-io/bible-api/compare/v0.0.0...v0.1.0
