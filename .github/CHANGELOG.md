@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.2]: 2023-09-23Z
+
+### Fixed
+
+- `remote.requestPassage(RequestPassageOptions)` now works with
+  `end.verseNumber === Infinity`.
+
 ## [0.4.1]: 2023-09-22Z
 
 ### Added

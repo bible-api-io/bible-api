@@ -76,6 +76,14 @@ export function requestPassage(
 ): Promise<Passage> {
   const { version, bookId, start, end } = options
 
+  let endVerseNumber = end.verseNumber
+
+  if (endVerseNumber === Infinity) {
+    // JSON does not support Infinity, so we use a large number instead, which
+    // will be capped to the maximum verse number in the chapter server-side.
+    endVerseNumber = 1000
+  }
+
   return request({
     headers: {
       'Content-Type': 'application/json',
@@ -83,7 +91,11 @@ export function requestPassage(
     },
     body: {
       version,
-      getPassageOptions: { bookId, start, end }
+      getPassageOptions: {
+        bookId,
+        start,
+        end: { chapterNumber: end.chapterNumber, verseNumber: endVerseNumber }
+      }
     }
   }) as Promise<Passage>
 }
