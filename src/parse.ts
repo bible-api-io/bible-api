@@ -516,16 +516,13 @@ export interface ParseOptions {
 export default function parse(options: ParseOptions): ParserReturn[] {
   const { defaultVersion = 'KJV1769', text } = options
 
-  const returnData: Array<{ index: number; data: ParserReturn }> = []
+  const returnData: ParserReturn[] = []
   for (const match of text.matchAll(regex)) {
     const parserReturn = parseMatch(match, defaultVersion)
     if (!parserReturn) continue
 
-    returnData.push({
-      index: match.index ?? 0,
-      data: parserReturn
-    })
+    returnData.push(parserReturn)
   }
 
-  return returnData.sort((a, b) => a.index - b.index).map(x => x.data)
+  return returnData.sort((a, b) => (a.match.index ?? 0) - (b.match.index ?? 0))
 }
