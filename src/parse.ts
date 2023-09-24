@@ -394,6 +394,7 @@ function parseBibleVersionString(
 
 /** The return value of `parse()`. */
 export interface ParserReturn {
+  readonly match: RegExpMatchArray
   /** The BibleVersion instance to use. */
   readonly version: BibleVersion | string | undefined
   /** Options for `version.getPassage()`. */
@@ -481,6 +482,7 @@ function parseMatch(
     return null
 
   return {
+    match,
     version,
     getPassageOptions: {
       bookId,
