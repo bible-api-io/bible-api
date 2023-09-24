@@ -2,6 +2,8 @@ import BibleVersion from './BibleVersion'
 import type { BookIdentifier, GetPassageOptions } from './BibleVersion'
 import localVersions from './localVersions'
 
+type RemoteVersionIdentifier = 'KJV1769' | 'TR1624' | 'TR1894' | 'BG'
+
 /**
  * Create a map of book name synonyms to book IDs or remote version name
  * synonyms to remote version IDs.
@@ -11,12 +13,12 @@ import localVersions from './localVersions'
  */
 function createSynonymsMap(
   synonyms: Array<
-    [BookIdentifier | 'KJV1769' | 'TR1624' | 'TR1894', ...string[]]
+    [BookIdentifier | RemoteVersionIdentifier, ...string[]]
   >
-): Map<string, BookIdentifier | 'KJV1769' | 'TR1624' | 'TR1894'> {
+): Map<string, BookIdentifier | RemoteVersionIdentifier> {
   const map = new Map<
     string,
-    BookIdentifier | 'KJV1769' | 'TR1624' | 'TR1894'
+    BookIdentifier | RemoteVersionIdentifier
   >()
 
   for (const synonymGroup of synonyms) {
@@ -305,7 +307,7 @@ const versionSynonyms = Object.values(localVersions).flatMap(x => x.synonyms)
 const versionSynonymsMap = createVersionSynonymsMap(
   Object.values(localVersions)
 )
-const remoteVersionSynonyms: ['KJV1769' | 'TR1624' | 'TR1894', ...string[]][] =
+const remoteVersionSynonyms: [RemoteVersionIdentifier, ...string[]][] =
   [
     [
       'KJV1769',
@@ -326,11 +328,19 @@ const remoteVersionSynonyms: ['KJV1769' | 'TR1624' | 'TR1894', ...string[]][] =
       'Textus Receptus (1894)',
       'Textus Receptus 1894',
       'Scrivener'
+    ],
+    [
+      'BG',
+      'Biblia Gdańska',
+      'Biblia Gdanska',
+      'Polish Biblia Gdańska',
+      'Polish Biblia Gdanska',
+      'PBG'
     ]
   ]
 const remoteVersionSynonymsMap = createSynonymsMap(
   remoteVersionSynonyms
-) as Map<string, 'KJV1769' | 'TR1624' | 'TR1894'>
+) as Map<string, RemoteVersionIdentifier>
 
 /**
  * Create a regular expression to parse Bible references.

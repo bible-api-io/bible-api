@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0]: 2023-09-24Z
+
+### Added
+
+- Biblia Gdańska version (remotely hosted on api.bible-api.io).
+
 ## [0.4.4]: 2023-09-23Z
 
 ### Fixed
@@ -83,6 +89,7 @@ same as [0.4.0], but with the correct files.
 - `localVersions.<version>.getVerse(BookIdentifier, number, number)` function.
 
 [unreleased]: https://github.com/bible-api-io/bible-api/compare/latest...HEAD
+[0.5.0]: https://github.com/bible-api-io/bible-api/compare/v0.4.4...v0.5.0
 [0.4.4]: https://github.com/bible-api-io/bible-api/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/bible-api-io/bible-api/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/bible-api-io/bible-api/compare/v0.4.1...v0.4.2
