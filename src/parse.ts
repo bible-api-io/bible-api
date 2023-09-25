@@ -355,8 +355,8 @@ function createRegex() {
       .replace(
         /\s+/g,
         '\\.?[^\\S\\r\\n]*'
-      )})\\.?[^\\S\\r\\n]*(?:(?<firstChapter1>\\d+):|(?<firstChapter2>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter1>\\d+)(?:\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<lastVerse1>\\d+))?|\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<firstVerse>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter2>\\d+)[.:;](?<lastVerse2>\\d+)|\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastVerse3>\\d+)|(?<onwards>[-–—]))?))?\\.?[^\\S\\r\\n]*\\(?\\.?[^\\S\\r\\n]*(?<version>${[
-      ...versionSynonyms,
+        )})\\.?[^\\S\\r\\n]*(?<firstChapter>\\d+)(?::(?![^\\S\\r\\n]*\\d))?(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter1>\\d+)(?::(?![^\\S\\r\\n]*\\d))?(?:\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<lastVerse1>\\d+))?|\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<firstVerse>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter2>\\d+)[.:;](?<lastVerse2>\\d+)|\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastVerse3>\\d+)|(?<onwards>[-–—]))?)?\\.?[^\\S\\r\\n]*\\(?\\.?[^\\S\\r\\n]*(?<version>${[
+          ...versionSynonyms,
       ...remoteVersionSynonyms.flat()
     ]
       .sort((a, b) => b.length - a.length)
@@ -459,7 +459,7 @@ function parseMatch(
     return null
   }
 
-  const firstChapterNumber = Number(groups['firstChapter1'] || groups['firstChapter2'])
+  const firstChapterNumber = Number(groups['firstChapter'])
   const firstVerseNumber = Number(groups['firstVerse'] ?? 1)
   const lastChapterNumber = Number(
     groups['lastChapter1'] ?? groups['lastChapter2'] ?? firstChapterNumber
