@@ -355,7 +355,7 @@ function createRegex() {
       .replace(
         /\s+/g,
         '\\.?[^\\S\\r\\n]*'
-      )})\\.?[^\\S\\r\\n]*(?<firstChapter>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter1>\\d+)(?:\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<lastVerse1>\\d+))?|\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<firstVerse>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter2>\\d+)[.:;](?<lastVerse2>\\d+)|\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastVerse3>\\d+)|(?<onwards>[-–—]))?)?\\.?[^\\S\\r\\n]*\\(?\\.?[^\\S\\r\\n]*(?<version>${[
+      )})\\.?[^\\S\\r\\n]*(?<firstChapter>\\d+)(?:\\.?[^\\S\\r\\n]*[.:;]?\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter1>\\d+)(?:\\.?[^\\S\\r\\n]*[.:;]\\.?)?(?:\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<lastVerse1>\\d+))?|\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<firstVerse>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter2>\\d+)[.:;](?<lastVerse2>\\d+)|\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastVerse3>\\d+)|(?<onwards>[-–—]))?)?\\.?[^\\S\\r\\n]*\\(?\\.?[^\\S\\r\\n]*(?<version>${[
       ...versionSynonyms,
       ...remoteVersionSynonyms.flat()
     ]
