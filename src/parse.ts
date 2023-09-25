@@ -459,7 +459,7 @@ function parseMatch(
     return null
   }
 
-  const firstChapterNumber = Number(groups['firstChapter'])
+  const firstChapterNumber = Number(groups['firstChapter1'] || groups['firstChapter2'])
   const firstVerseNumber = Number(groups['firstVerse'] ?? 1)
   const lastChapterNumber = Number(
     groups['lastChapter1'] ?? groups['lastChapter2'] ?? firstChapterNumber
