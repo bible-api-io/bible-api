@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0]: 2023-09-26Z
+
+### Added
+
+- Vulgata Latina version (remotely hosted on api.bible-api.io).
+
 ## [0.7.0]: 2023-09-25Z
 
 ### Added
@@ -101,6 +107,7 @@ same as [0.4.0], but with the correct files.
 - `localVersions.<version>.getVerse(BookIdentifier, number, number)` function.
 
 [unreleased]: https://github.com/bible-api-io/bible-api/compare/latest...HEAD
+[0.8.0]: https://github.com/bible-api-io/bible-api/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/bible-api-io/bible-api/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/bible-api-io/bible-api/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/bible-api-io/bible-api/compare/v0.4.4...v0.5.0

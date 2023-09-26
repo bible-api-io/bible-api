@@ -2,7 +2,7 @@ import BibleVersion from './BibleVersion'
 import type { BookIdentifier, GetPassageOptions } from './BibleVersion'
 import localVersions from './localVersions'
 
-type RemoteVersionIdentifier = 'KJV1769' | 'TR1624' | 'TR1894' | 'BG'
+type RemoteVersionIdentifier = 'KJV1769' | 'TR1624' | 'TR1894' | 'BG' | 'Vulgate'
 
 /**
  * Create a map of book name synonyms to book IDs or remote version name
@@ -336,6 +336,17 @@ const remoteVersionSynonyms: [RemoteVersionIdentifier, ...string[]][] =
       'Polish Biblia Gdańska',
       'Polish Biblia Gdanska',
       'PBG'
+    ],
+    [
+      'Vulgate',
+      "Vulgata",
+      "Biblia Vugata",
+      "Latina Vulgata",
+      "Latina Vulgate",
+      "Latin Vulgate",
+      "Vulgata Latina",
+      "Latina",
+      "Latin"
     ]
   ]
 const remoteVersionSynonymsMap = createSynonymsMap(
