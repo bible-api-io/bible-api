@@ -15,7 +15,7 @@ describe('parse(ParseOptions)', () => {
     test('{ text: "Ephesians 1:4" }', () => {
       expect(parse({ text: 'Ephesians 1:4' })).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Ephesians',
             start: { chapterNumber: 1, verseNumber: 4 },
@@ -28,7 +28,7 @@ describe('parse(ParseOptions)', () => {
     test('{ text: "Ephesians 1:4-7" }', () => {
       expect(parse({ text: 'Ephesians 1:4-7' })).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Ephesians',
             start: { chapterNumber: 1, verseNumber: 4 },
@@ -41,7 +41,7 @@ describe('parse(ParseOptions)', () => {
     test('{ text: "Romans 5:20-" }', () => {
       expect(parse({ text: 'Romans 5:20-' })).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Romans',
             start: { chapterNumber: 5, verseNumber: 20 },
@@ -54,7 +54,7 @@ describe('parse(ParseOptions)', () => {
     test('{ text: "Romans 5:20-6:2" }', () => {
       expect(parse({ text: 'Romans 5:20-6:2' })).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Romans',
             start: { chapterNumber: 5, verseNumber: 20 },
@@ -67,7 +67,7 @@ describe('parse(ParseOptions)', () => {
     test('{ text: "Romans 9" }', () => {
       expect(parse({ text: 'Romans 9' })).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Romans',
             start: { chapterNumber: 9, verseNumber: 1 },
@@ -80,7 +80,7 @@ describe('parse(ParseOptions)', () => {
     test('{ text: "Genesis 1-2" }', () => {
       expect(parse({ text: 'Genesis 1-2' })).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Genesis',
             start: { chapterNumber: 1, verseNumber: 1 },
@@ -93,7 +93,7 @@ describe('parse(ParseOptions)', () => {
     test('{ text: "Genesis 1-2:3" }', () => {
       expect(parse({ text: 'Genesis 1-2:3' })).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Genesis',
             start: { chapterNumber: 1, verseNumber: 1 },
@@ -136,7 +136,7 @@ describe('parse(ParseOptions)', () => {
         parse({ text: 'Ephesians 1:4 (KJV)', defaultVersion: 'TR1894' })
       ).toMatchObject([
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Ephesians',
             start: { chapterNumber: 1, verseNumber: 4 },
@@ -159,7 +159,7 @@ describe('parse(ParseOptions)', () => {
           }
         },
         {
-          version: 'KJV1769',
+          version: 'PCE',
           getPassageOptions: {
             bookId: 'Acts',
             start: { chapterNumber: 1, verseNumber: 1 },

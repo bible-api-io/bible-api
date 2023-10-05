@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0]: 2023-10-05Z
+
+### Changed
+
+- The default version is now the Pure Cambridge Edition (PCE/KJV1900) version
+  (remotely hosted on api.bible-api.io).
+
 ## [0.9.0]: 2023-10-05Z
 
 ### Added

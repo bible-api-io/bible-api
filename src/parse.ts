@@ -537,7 +537,7 @@ export interface ParseOptions {
  * to use.
  */
 export default function parse(options: ParseOptions): ParserReturn[] {
-  const { defaultVersion = 'KJV1769', text } = options
+  const { defaultVersion = 'PCE', text } = options
 
   const returnData: ParserReturn[] = []
   for (const match of text.matchAll(regex)) {
