@@ -2,7 +2,13 @@ import BibleVersion from './BibleVersion'
 import type { BookIdentifier, GetPassageOptions } from './BibleVersion'
 import localVersions from './localVersions'
 
-type RemoteVersionIdentifier = 'KJV1769' | 'TR1624' | 'TR1894' | 'BG' | 'Vulgate'
+type RemoteVersionIdentifier =
+  | 'PCE'
+  | 'KJV1769'
+  | 'TR1624'
+  | 'TR1894'
+  | 'BG'
+  | 'Vulgate'
 
 /**
  * Create a map of book name synonyms to book IDs or remote version name
@@ -12,14 +18,9 @@ type RemoteVersionIdentifier = 'KJV1769' | 'TR1624' | 'TR1894' | 'BG' | 'Vulgate
  * @return The map of book name synonyms to book IDs.
  */
 function createSynonymsMap(
-  synonyms: Array<
-    [BookIdentifier | RemoteVersionIdentifier, ...string[]]
-  >
+  synonyms: Array<[BookIdentifier | RemoteVersionIdentifier, ...string[]]>
 ): Map<string, BookIdentifier | RemoteVersionIdentifier> {
-  const map = new Map<
-    string,
-    BookIdentifier | RemoteVersionIdentifier
-  >()
+  const map = new Map<string, BookIdentifier | RemoteVersionIdentifier>()
 
   for (const synonymGroup of synonyms) {
     for (const synonym of synonymGroup) {
@@ -307,48 +308,59 @@ const versionSynonyms = Object.values(localVersions).flatMap(x => x.synonyms)
 const versionSynonymsMap = createVersionSynonymsMap(
   Object.values(localVersions)
 )
-const remoteVersionSynonyms: [RemoteVersionIdentifier, ...string[]][] =
+const remoteVersionSynonyms: [RemoteVersionIdentifier, ...string[]][] = [
   [
-    [
-      'KJV1769',
-      'KJV',
-      'King James Version',
-      'King James Version (1769)',
-      'King James Version 1769',
-      'King James Bible (1769)',
-      'King James Bible 1769',
-      'King James (1769)',
-      'King James 1769'
-    ],
-    ['TR1624', 'Textus Receptus (1624)', 'Textus Receptus 1624', 'Elzevir'],
-    [
-      'TR1894',
-      'TR',
-      'Textus Receptus',
-      'Textus Receptus (1894)',
-      'Textus Receptus 1894',
-      'Scrivener'
-    ],
-    [
-      'BG',
-      'Biblia Gdańska',
-      'Biblia Gdanska',
-      'Polish Biblia Gdańska',
-      'Polish Biblia Gdanska',
-      'PBG'
-    ],
-    [
-      'Vulgate',
-      "Vulgata",
-      "Biblia Vugata",
-      "Latina Vulgata",
-      "Latina Vulgate",
-      "Latin Vulgate",
-      "Vulgata Latina",
-      "Latina",
-      "Latin"
-    ]
+    'KJV1769',
+    'King James Version (1769)',
+    'King James Version 1769',
+    'King James Bible (1769)',
+    'King James Bible 1769',
+    'King James (1769)',
+    'King James 1769'
+  ],
+  [
+    'PCE',
+    'Pure Cambridge Edition',
+    'KJV1900',
+    'KJV',
+    'King James',
+    'King James Version',
+    'King James Version (1900)',
+    'King James Version 1900',
+    'King James Bible (1900)',
+    'King James Bible 1900',
+    'King James (1900)',
+    'King James 1900'
+  ],
+  ['TR1624', 'Textus Receptus (1624)', 'Textus Receptus 1624', 'Elzevir'],
+  [
+    'TR1894',
+    'TR',
+    'Textus Receptus',
+    'Textus Receptus (1894)',
+    'Textus Receptus 1894',
+    'Scrivener'
+  ],
+  [
+    'BG',
+    'Biblia Gdańska',
+    'Biblia Gdanska',
+    'Polish Biblia Gdańska',
+    'Polish Biblia Gdanska',
+    'PBG'
+  ],
+  [
+    'Vulgate',
+    'Vulgata',
+    'Biblia Vugata',
+    'Latina Vulgata',
+    'Latina Vulgate',
+    'Latin Vulgate',
+    'Vulgata Latina',
+    'Latina',
+    'Latin'
   ]
+]
 const remoteVersionSynonymsMap = createSynonymsMap(
   remoteVersionSynonyms
 ) as Map<string, RemoteVersionIdentifier>
@@ -366,8 +378,8 @@ function createRegex() {
       .replace(
         /\s+/g,
         '\\.?[^\\S\\r\\n]*'
-        )})\\.?[^\\S\\r\\n]*(?<firstChapter>\\d+)(?::(?![^\\S\\r\\n]*\\d))?(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter1>\\d+)(?::(?![^\\S\\r\\n]*\\d))?(?:\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<lastVerse1>\\d+))?|\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<firstVerse>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter2>\\d+)[.:;](?<lastVerse2>\\d+)|\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastVerse3>\\d+)|(?<onwards>[-–—]))?)?\\.?[^\\S\\r\\n]*\\(?\\.?[^\\S\\r\\n]*(?<version>${[
-          ...versionSynonyms,
+      )})\\.?[^\\S\\r\\n]*(?<firstChapter>\\d+)(?::(?![^\\S\\r\\n]*\\d))?(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter1>\\d+)(?::(?![^\\S\\r\\n]*\\d))?(?:\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<lastVerse1>\\d+))?|\\.?[^\\S\\r\\n]*[.:;]\\.?[^\\S\\r\\n]*(?<firstVerse>\\d+)(?:\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastChapter2>\\d+)[.:;](?<lastVerse2>\\d+)|\\.?[^\\S\\r\\n]*[-–—]\\.?[^\\S\\r\\n]*(?<lastVerse3>\\d+)|(?<onwards>[-–—]))?)?\\.?[^\\S\\r\\n]*\\(?\\.?[^\\S\\r\\n]*(?<version>${[
+      ...versionSynonyms,
       ...remoteVersionSynonyms.flat()
     ]
       .sort((a, b) => b.length - a.length)
