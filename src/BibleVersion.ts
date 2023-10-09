@@ -234,12 +234,17 @@ export default class BibleVersion implements BibleVersionOptions {
             /\*\*(?<jesus>.+)\*\*/g,
             '<span class="bible__jesus">$<jesus></span>'
           )
-          .replace(/\*(?<italic>.+)\*/g, '<i>$<italic></i>') +
+          .replace(/\*(?<italic>.+)\*/g, '<i>$<italic></i>')
+          .replace(
+            /`(?<note>.+)`/g,
+            '<span class="bible__note">$<note></span>'
+          ) +
         '</span>') as any,
       markdown: verseData,
       text: verseData
         .replace(/\*\*(?<jesus>.+)\*\*/g, '$<jesus>')
         .replace(/\*(?<italic>.+)\*/g, '[$<italic>]')
+        .replace(/`(?<note>.+)`/g, '($<note>)')
     }
   }
 
